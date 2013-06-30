@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
-  <title>Brr</title>
+  <title>Boulder Road Runners Member Portal</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 </head>
 <body>
+<div class="container">
+  <div class="span12 centered">
+    <div class="navbar">
+
+      <div class="navbar-inner">
+        <a class="brand" href="#">Member Portal</a>
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/members/2/edit">Edit Profile</a></li>
+          <li><a href="#">Member Directory</a></li>
+          <li><a href="#">Blog</a></li> 
+          <li><a href="#">Forum</a></li>   
+          <li><a href="#">Races</a></li>
+          <li><a href="#">Volunteer Events</a></li>
+          <li><a href="/members/home">Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
   
   <%= yield %>
-
+  
+  </div>
+</div>
 </body>
 </html>
 

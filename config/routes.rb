@@ -1,5 +1,5 @@
 Brr::Application.routes.draw do
-  root(:to => 'members#index')
+  root(:to => 'members#home')
   
   resources :members
   resources :sessions

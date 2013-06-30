@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20130627191001) do
     t.string   "city"
     t.string   "state"
     t.string   "zip_code"
-    t.string   "home_phone"
-    t.string   "mobile_phone"
-    t.string   "email_address"
+    t.string   "phone1"
+    t.string   "phone2"
+    t.string   "email"
     t.string   "gender"
     t.date     "birth_date"
     t.string   "member_level"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20130627191001) do
     t.boolean  "can_post"
     t.boolean  "admin"
     t.boolean  "opt_in"
-    t.string   "username"
     t.string   "password_digest"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

@@ -1,4 +1,13 @@
+#require 'debugger'
 class MembersController < ApplicationController
+
+before_filter(except: [:home, :new, :create]) do
+  if session[:member_id] == nil
+    flash[:error] = "You must be logged in to see that page."
+    redirect_to new_session_path and return
+  end
+end
+  
   def index
     @members = Member.all
     render :index and return
@@ -6,7 +15,7 @@ class MembersController < ApplicationController
 	
 	def show
 	  @member = Member.find(params[:id])
-	  render :show, :layout => 'home' and return
+	  render :show and return
 	end
 	
 	def new
@@ -15,8 +24,9 @@ class MembersController < ApplicationController
 	end
 	
 	def create
-	  @member = Member.new(params[:id])
+	  @member = Member.new(params[:member])
 	  if @member.save
+	    session[:member_id] = @member.id
 	    flash[:notice] = 'Member was successfully created.'
 	    redirect_to @member and return
 	  else

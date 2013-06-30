@@ -9,9 +9,9 @@ class CreateMembers < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :zip_code
-      t.string :home_phone
-      t.string :mobile_phone
-      t.string :email_address
+      t.string :phone1
+      t.string :phone2
+      t.string :email
       t.string :gender
       t.date :birth_date
       t.string :member_level
