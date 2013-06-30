@@ -8,4 +8,9 @@ class SessionsController < ApplicationController
       redirect_to new_session_path, :notice => "Member does not exist."
     end
   end
+  
+  def destroy
+    session[:member_id] = nil
+    redirect_to root_url, :notice => "Member signed out." 
+  end
 end

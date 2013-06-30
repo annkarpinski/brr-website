@@ -1,5 +1,9 @@
+<div align="middle">
+<br>
+<br>
 <h1>Boulder Road Runners Member Login</h1>
-<h3>Sign In</h3>
+<br>
+<br>
 
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, :class => "flash #{key}") %>
@@ -19,6 +23,7 @@
       <%= f.submit "Sign In", class: "btn btn-medium btn-primary" %>
     <% end %>
     
-    <p>New member? <%= link_to "Sign up here!", new_member_path %></p>
+    <p>New member? <strong><%= link_to "Sign up here!", new_member_path %></strong></p>
   </div>
+</div>
 </div>

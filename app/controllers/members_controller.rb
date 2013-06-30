@@ -13,14 +13,14 @@ end
     render :index and return
 	end
 	
-	def show
-	  @member = Member.find(params[:id])
-	  render :show and return
-	end
-	
 	def new
 	  @member = Member.new
 	  render :new and return
+	end
+	
+	def show
+	  @member = Member.find(params[:id])
+	  render :show and return
 	end
 	
 	def create
@@ -30,7 +30,7 @@ end
 	    flash[:notice] = 'Member was successfully created.'
 	    redirect_to @member and return
 	  else
-	    render :new and return
+	    render :index and return
 	  end
 	end
 	
