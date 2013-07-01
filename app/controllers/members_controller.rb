@@ -15,24 +15,32 @@ end
 	
 	def new
 	  @member = Member.new
-	  render :new and return
-	end
-	
-	def show
-	  @member = Member.find(params[:id])
-	  render :show and return
+	  render :new 
 	end
 	
 	def create
 	  @member = Member.new(params[:member])
 	  if @member.save
-	    session[:member_id] = @member.id
-	    flash[:notice] = 'Member was successfully created.'
-	    redirect_to @member and return
+	   session[:member_id] = @member.id
+	   flash[:notice] = 'Member was successfully created.'
+	    redirect_to @member
 	  else
-	    render :index and return
+	    redirect_to :action => 'index'
+	    flash[:notice] = "Member was not created"
 	  end
 	end
+	    
+	def show
+	  @member = Member.find(params[:id])
+	  render :show and return
+	end
+	    
+	def volunteer
+	end
+	
+	def forum
+	end
+
 	
 	def edit
 	  @member = Member.find(params[:id])

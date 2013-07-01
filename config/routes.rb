@@ -1,8 +1,14 @@
 Brr::Application.routes.draw do
   root(:to => 'members#home')
+  get "members/forum" => "members#forum", as: "forum"
+  get "members/races" => "members#races", as: "races"
+  get "members/volunteer" => "members#volunteer", as: "volunteer"  
   
   resources :members
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup', to: 'members#new'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy'
 end
 
 
