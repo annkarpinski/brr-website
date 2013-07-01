@@ -3,7 +3,7 @@ class Member < ActiveRecord::Base
    :phone1, :phone2, :email, :gender, :birth_date, :member_level, :member_since, 
    :membership_expires, :reward_points, :can_post, :admin, :password, :password_confirmation
    
-  attr_accessor :password
+  attr_accessor :password, :password_salt, :encrypt_password
 
   before_validation :encrypt_password
   
@@ -28,7 +28,7 @@ class Member < ActiveRecord::Base
     end
   end
   
-    def encrypt_password
+  def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt
       self.password_digest = BCrypt::Engine.hash_secret(password, self.password_salt)

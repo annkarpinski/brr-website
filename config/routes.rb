@@ -11,8 +11,9 @@ Brr::Application.routes.draw do
   
   resources :members
   resources :sessions
-  resources :posts ##do
-  resources :comments
+  resources :posts do
+    resources :comments
+  end
 end
 
 

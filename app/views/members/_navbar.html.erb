@@ -7,14 +7,14 @@
         <a class="brand">BRR Member Dashboard</a>
         <div class = "nav-collapse collapse">
           <ul class="nav pull-right">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/members/edit">Edit Profile</a></li>
-          <li><a href="/members">Member Directory</a></li>
-          <li><a href="/members/blog">Blog</a></li>
-          <li><a href="/members/forum">Forum</a></li>
-          <li><a href="/members/races">Races</a></li>
-          <li><a href="/members/volunteer">Volunteer Events</a></li>
-          <li><a href="/">Sign Out</a></li>
+        <li class="active"><li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Edit', edit_member_path(@member) %></li>
+          <li><%= link_to 'Member Directory', members_path %></li>
+          <li><%= link_to 'Blog', posts_path %></li>
+          <li><%= link_to 'Forum', forum_path %></li>
+          <li><%= link_to 'Races', races_path %></li>
+          <li><%= link_to 'Volunteer Events', volunteer_path %></li>
+          <li><%= link_to 'Sign Out', members_path %></li>
         </ul>
     </div>
   </div>  

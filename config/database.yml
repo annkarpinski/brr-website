@@ -2,6 +2,6 @@ development:
   adapter: postgresql
   host: localhost
   database: "brr"
-  username: jim
-  password: 
+  username: postgres
+  password: postgres
   encoding: unicode

@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20130627191001) do
     t.boolean  "admin"
     t.boolean  "opt_in"
     t.string   "password_digest"
-    t.string   "password_salt"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end

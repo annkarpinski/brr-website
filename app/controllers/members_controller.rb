@@ -35,6 +35,29 @@ class MembersController < ApplicationController
     render :show and return
   end
 
+  def edit
+    @member = Member.find(params[:id])
+    render :edit and return
+  end
+
+  def update
+    @member = Member.find(params[:id])
+    respond_to do |format|
+    if @member.update_attributes(params[:member])
+      flash[:notice] = "Member was successfully updated."
+      redirect_to @member and return
+    else
+      render :edit and return
+    end
+  end
+end
+  
+  def destroy
+    @member = Member.find(params[:id])
+    @member.destroy
+    redirect_to members_url and return
+  end
+
   def blog
   end
 
@@ -46,26 +69,4 @@ class MembersController < ApplicationController
 
   def volunteer
   end
-
-  def edit
-    @member = Member.find(params[:id])
-    render :edit and return
-  end
-
-  def update
-    @member = Member.find(params[:id])
-    if @member.save
-      flash[:notice] = 'Member was successfully updated.'
-      redirect_to @member and return
-    else
-      render :edit and return
-    end
-  end
-  
-  def destroy
-    @member = Member.find(params[:id])
-    @member.destroy
-    redirect_to members_url and return
-  end
 end
-
