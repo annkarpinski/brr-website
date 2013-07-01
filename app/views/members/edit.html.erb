@@ -1,9 +1,10 @@
+<div align="middle">
 <%= render "navbar" %>
 
 <h1>Edit Member Profile</h1>
 
-<div class="row">
-  <div class="span6 offset3">
+<div class="row-fluid">
+<div class="span12">
     <%= form_for(@member) do |f| %>
     
       <%= f.label :email, "Email Address*" %>
@@ -59,4 +60,5 @@
     <% end %>
     
   </div>
+</div>
 </div>

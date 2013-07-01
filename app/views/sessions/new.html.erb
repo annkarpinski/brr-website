@@ -17,6 +17,7 @@
             </div>
           </div>
         </div>
+
 <br>
 <br>
 <h1>Boulder Road Runners Member Login</h1>
@@ -27,8 +28,8 @@
       <%= content_tag(:div, value, :class => "flash #{key}") %>
     <% end %>
 
-<div class="row">
-  <div class="span6 offset3">
+<div class="row-fluid">
+<div class="span12">  
     <%= form_for(:session, url: sessions_path) do |f| %>
     
       <%= f.label :email %>

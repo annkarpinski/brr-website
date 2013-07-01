@@ -35,10 +35,16 @@ class MembersController < ApplicationController
     render :show and return
   end
 
-  def volunteer
+  def blog
   end
 
   def forum
+  end
+  
+  def races
+  end
+
+  def volunteer
   end
 
   def edit
