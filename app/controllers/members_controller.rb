@@ -25,8 +25,8 @@ class MembersController < ApplicationController
       flash[:notice] = 'Member was successfully created.'
       redirect_to @member
     else
-      flash[:notice] = "Member was not created"
-      redirect_to :action => 'show'
+      flash[:notice] = "Member was not created."
+      render :new and return
     end
   end
 
