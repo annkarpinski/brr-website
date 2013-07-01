@@ -22,7 +22,7 @@ class CreateMembers < ActiveRecord::Migration
       t.boolean :admin
       t.boolean :opt_in
       t.string :password_digest
-      
+      t.string :password_salt      
       t.timestamps
     end
   end

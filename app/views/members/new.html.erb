@@ -24,10 +24,10 @@
 <br>
     <%= form_for @member do |f| %>
       <% if @member.errors.any? %>
-        div class="error_mesages">
+        <div class="error_mesages">
           <h2>Form is invalid</h2>
           <ul>
-            <% for message in @user.errors.full_messages %>
+            <% for message in @member.errors.full_messages %>
               <li><%= message %></li>
             <% end %>
           </ul>
