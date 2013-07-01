@@ -12,8 +12,7 @@ class Member < ActiveRecord::Base
   has_many :rewards
   has_many :races, :through => :members_races
   
-  validates_presence_of :first_name, :last_name, :address1, :city, :state, :zip_code, :phone1, 
-  :email, :gender, :birth_date
+  validates_presence_of :first_name, :last_name, :email
   validates_uniqueness_of :email
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password

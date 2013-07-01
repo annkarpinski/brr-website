@@ -15,17 +15,17 @@ class MembersController < ApplicationController
 
   def new
     @member = Member.new
-  render :new
+    render :new
   end
 
   def create
     @member = Member.new(params[:member])
     if @member.save
       session[:member_id] = @member.id
-      flash[:notice] = 'Member was successfully created.'
+      flash[:notice] = "Member was successfully created."
       redirect_to @member
     else
-      flash[:notice] = "Member was not created."
+      flash[:notice] = "Member was not created. Errors: #{@members.errors.full_messages}"
       render :new and return
     end
   end
