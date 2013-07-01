@@ -10,9 +10,10 @@
 
 <h1>Member Directory</h1>
 
-<%= @members.all %>
-
-</div>
+<% @members.each do |member| %>
+  <li><%= member.first_name %> <%= member.last_name %> - <%= member.email %>
+<% end %>
+/div>
 </div>
 
 </div>
