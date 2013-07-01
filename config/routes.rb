@@ -1,14 +1,18 @@
 Brr::Application.routes.draw do
   root(:to => 'members#home')
+  
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+  
   get "members/forum" => "members#forum", as: "forum"
   get "members/races" => "members#races", as: "races"
   get "members/volunteer" => "members#volunteer", as: "volunteer"  
   
   resources :members
-  resources :sessions, only: [:new, :create, :destroy]
-  match '/signup', to: 'members#new'
-  match '/signin', to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy'
+  resources :sessions
+  resources :posts ##do
+  resources :comments
 end
 
 
